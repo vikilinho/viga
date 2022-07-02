@@ -20,9 +20,14 @@ class GoldRush with Loadable, Game {
       BasicPalette.green.paint(); //color of the square (a ball)
   static const squareWidth = 100; //width of the square (a ball)
   static const squareHeight = 100; //height of the square (a ball)
-  late Rect squarePosition;
-  int squareDirection = 1;
-  late double screenWidth, screenHeight, centerX, centerY;
+  late Rect
+      squarePosition; // position of the square after determing the center of the screen
+  int squareDirection =
+      1; //since it is a positive number, it will move to the right
+  late double screenWidth,
+      screenHeight,
+      centerX,
+      centerY; //variables for the screen size and center
 
   @override
   void render(Canvas canvas) {
