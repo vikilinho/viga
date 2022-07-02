@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/palette.dart';
@@ -18,13 +19,12 @@ void main() async {
 }
 
 class GoldRush with Game {
-  static const int squareSpeed = 250;
-  static const int circleSpeed = 300;
+  int squareSpeed = 250;
+  int circleSpeed = 250;
   // The speed that our square will animate
   var squarePaint = BasicPalette.green.paint(); // The color of the square
   static const squareWidth = 50.0, squareHeight = 50.0;
-  static final circlePaint =
-      BasicPalette.blue.paint(); // The color of the square
+  var circlePaint = BasicPalette.blue.paint(); // The color of the square
   static const circleOffset = 50.0,
       circleRadius =
           50.0; // The width and height of our square will be 100 x 100
@@ -84,8 +84,12 @@ class GoldRush with Game {
     }
     if (circleDirection == 1 && circlePos.right > screenWidth) {
       circleDirection = -1;
+      circleSpeed = 250 + 10;
+      circlePaint = BasicPalette.magenta.paint();
     } else if (circleDirection == -1 && circlePos.left < 0) {
       circleDirection = 1;
+      circleSpeed = 250 + 10;
+      circlePaint = BasicPalette.yellow.paint();
     }
   }
 }
