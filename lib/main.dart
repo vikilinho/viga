@@ -28,6 +28,12 @@ class GoldRush with Loadable, Game {
       screenHeight,
       centerX,
       centerY; //variables for the screen size and center
+  Future<void> onLoad() {
+    super.onLoad();
+    screenWidth = MediaQueryData.fromWindow(window).size.width;
+    screenHeight = MediaQueryData.fromWindow(window).size.height;
+    centerX = (screenWidth / 2) - (squareWidth / 2);
+  }
 
   @override
   void render(Canvas canvas) {
