@@ -15,10 +15,14 @@ void main() async {
 }
 
 class GoldRush with Loadable, Game {
-  static const int squareSpeed = 250;
-  static final squarePaint = BasicPalette.green.paint();
-  static final squareWidth = 100;
-  static final squareHeight = 100;
+  static const int squareSpeed = 250; //animation speed of the squares
+  static final squarePaint =
+      BasicPalette.green.paint(); //color of the square (a ball)
+  static const squareWidth = 100; //width of the square (a ball)
+  static const squareHeight = 100; //height of the square (a ball)
+  late Rect squarePosition;
+  int squareDirection = 1;
+  late double screenWidth, screenHeight, centerX, centerY;
 
   @override
   void render(Canvas canvas) {
