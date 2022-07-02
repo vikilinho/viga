@@ -16,4 +16,17 @@ void main() async {
 
 class GoldRush with Loadable, Game {
   static const int squareSpeed = 250;
+  static final squarePaint = BasicPalette.green.paint();
+  static final squareWidth = 100;
+  static final squareHeight = 100;
+
+  @override
+  void render(Canvas canvas) {
+    // TODO: implement render
+  }
+
+  @override
+  void update(double dt) {
+    // TODO: implement update
+  }
 }
